@@ -1,0 +1,29 @@
+extends ../layout 
+
+block content 
+    .container
+        .row
+            .col-sm-3
+            .col-sm-6 
+                h2(class="mt-2") Add Faculty Member      
+                form(action="/api/faculty/add", method="post")
+                    .mb-3 
+                        label(for="name") Name 
+                        input#name(type="text", class="form-control", name="name")
+                    .mb-3
+                        label(for="gender") Gender 
+                        input#price(type="text", class="form-control", name="gender")
+                    .mb-3 
+                        label(for="email") Email 
+                        input#name(type="text", class="form-control", name="email")
+                    .mb-3
+                        label(for="address") Address 
+                        input#price(type="text", class="form-control", name="address")
+                    .mb-3 
+                        label(for="courseCode") Course Code 
+                        input#name(type="text", class="form-control", name="courseCode")
+                    .mb-3
+                        label(for="phoneNo") Phone Number 
+                        input#price(type="text", class="form-control", name="phoneNo")
+                    input(type="submit", class="btn btn-primary")
+            .col-sm-3

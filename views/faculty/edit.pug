@@ -1,0 +1,29 @@
+extends ../layout 
+
+block content 
+    .container
+        .row
+            .col-sm-3
+            .col-sm-6 
+                h2(class="mt-2") Edit Faculty Member      
+                form(action="/api/faculty/edit/"+member._id, method="post")
+                    .mb-3 
+                        label(for="name") Name 
+                        input#name(type="text", class="form-control", name="name" value=member.name)
+                    .mb-3
+                        label(for="gender") Gender 
+                        input#price(type="text", class="form-control", name="gender" value=member.gender)
+                    .mb-3 
+                        label(for="email") Email 
+                        input#name(type="text", class="form-control", name="email" value=member.email)
+                    .mb-3
+                        label(for="address") Address 
+                        input#price(type="text", class="form-control", name="address" value=member.address)
+                    .mb-3 
+                        label(for="courseCode") Course Code 
+                        input#name(type="text", class="form-control", name="courseCode" value=member.courseCode)
+                    .mb-3
+                        label(for="phoneNumber") Phone Number 
+                        input#price(type="text", class="form-control", name="phoneNo" value=member.phoneNo)
+                    input(type="submit", class="btn btn-primary")
+            .col-sm-3

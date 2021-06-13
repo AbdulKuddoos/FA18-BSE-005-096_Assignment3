@@ -1,0 +1,37 @@
+extends ../layout
+
+
+block content
+    - var id = 0;
+    .container
+        .row
+            .col-sm-8
+                h2(class="m-5") Welcome to #{title} Api
+            .col-sm-4
+                a(href="/api/faculty/add", class="btn btn-success m-5") Add Faculty Member 
+        table.table 
+            thead 
+                tr  
+                    th #
+                    th Name 
+                    th Gender
+                    th Email  
+                    th Address 
+                    th CourseCode
+                    th PhoneNo
+                    th Actions
+                tbody   
+                    each member in faculty 
+                        tr 
+                            td= ++id 
+                            td= member.name 
+                            td= member.gender
+                            td= member.email 
+                            td= member.address
+                            td= member.courseCode 
+                            td= member.phoneNo
+                            td
+                                a(href="/api/faculty/delete/"+member._id , class="btn btn-danger m-1") Delete
+                                a(href="/api/faculty/edit/"+member._id , class="btn btn-warning m-1") Edit 
+
+
