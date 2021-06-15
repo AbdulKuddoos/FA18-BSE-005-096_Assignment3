@@ -14,7 +14,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Connected with db");
+    console.log("Connected with faculty Api");
   })
   .catch((error) => {
     console.log(error.message);

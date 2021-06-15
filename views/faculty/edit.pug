@@ -9,21 +9,29 @@ block content
                 form(action="/api/faculty/edit/"+member._id, method="post")
                     .mb-3 
                         label(for="name") Name 
-                        input#name(type="text", class="form-control", name="name" value=member.name)
+                        input#name(type="text", class="form-control", name="name" required="required" value=member.name)
                     .mb-3
                         label(for="gender") Gender 
-                        input#price(type="text", class="form-control", name="gender" value=member.gender)
+                        input#gender(type="text", class="form-control", name="gender" required="required" value=member.gender)
                     .mb-3 
                         label(for="email") Email 
-                        input#name(type="text", class="form-control", name="email" value=member.email)
-                    .mb-3
-                        label(for="address") Address 
-                        input#price(type="text", class="form-control", name="address" value=member.address)
+                        input#email(type="text", class="form-control", name="email" required="required" value=member.email)
+                    .input-group.mb-3 
+                        span(class="input-group-text") Street-Address, City, Country
+                        input#street_address(type="text" name="street_address" class="form-control" title="Street Adress" required="required" value=member.address.street_address)
+                        input#city(type="text" name="city" class="form-control" title="City" required="required" value=member.address.city)
+                        input#country(type="text" name="country" class="form-control" title="Country" required="required" value=member.address.country)
                     .mb-3 
                         label(for="courseCode") Course Code 
-                        input#name(type="text", class="form-control", name="courseCode" value=member.courseCode)
+                        input#courseCode(type="text", class="form-control", name="courseCode" required="required" value=member.courseCode)
                     .mb-3
-                        label(for="phoneNumber") Phone Number 
-                        input#price(type="text", class="form-control", name="phoneNo" value=member.phoneNo)
+                        label(for="phoneNo") PhoneNo
+                        input#phoneNo1(type="text", class="form-control", name="phoneNo1" required="required" value=member.phoneNo[0])
+                    .mb-3
+                        label(for="phoneNo") PhoneNo
+                        input#phoneNo2(type="text", class="form-control", name="phoneNo2" required="required" value=member.phoneNo[1])
+                    .mb-3
+                        label(for="phoneNo") PhoneNo
+                        input#phoneNo3(type="text", class="form-control", name="phoneNo3" required="required" value=member.phoneNo[2])
                     input(type="submit", class="btn btn-primary")
             .col-sm-3

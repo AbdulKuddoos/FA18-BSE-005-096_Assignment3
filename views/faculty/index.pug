@@ -16,7 +16,9 @@ block content
                     th Name 
                     th Gender
                     th Email  
-                    th Address 
+                    th Street Address
+                    th City
+                    th Country
                     th CourseCode
                     th PhoneNo
                     th Actions
@@ -27,11 +29,14 @@ block content
                             td= member.name 
                             td= member.gender
                             td= member.email 
-                            td= member.address
-                            td= member.courseCode 
-                            td= member.phoneNo
+                            td= member.address.street_address
+                            td= member.address.city 
+                            td= member.address.country
+                            td= member.courseCode
+                            td 
+                                ul#phone-list
+                                    each val in member.phoneNo
+                                        li= val
                             td
                                 a(href="/api/faculty/delete/"+member._id , class="btn btn-danger m-1") Delete
                                 a(href="/api/faculty/edit/"+member._id , class="btn btn-warning m-1") Edit 
-
-

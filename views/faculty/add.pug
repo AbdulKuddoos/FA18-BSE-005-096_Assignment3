@@ -9,21 +9,30 @@ block content
                 form(action="/api/faculty/add", method="post")
                     .mb-3 
                         label(for="name") Name 
-                        input#name(type="text", class="form-control", name="name")
+                        input#name(type="text", class="form-control", name="name" required="required")
                     .mb-3
                         label(for="gender") Gender 
-                        input#price(type="text", class="form-control", name="gender")
+                        input#gender(type="text", class="form-control", name="gender" required="required")
                     .mb-3 
                         label(for="email") Email 
-                        input#name(type="text", class="form-control", name="email")
-                    .mb-3
-                        label(for="address") Address 
-                        input#price(type="text", class="form-control", name="address")
+                        input#email(type="text", class="form-control", name="email" required="required")
+                    .input-group.mb-3 
+                        span(class="input-group-text") Street-Address, City, Country
+                        input#street_address(type="text" name="street_address" class="form-control" title="Street Adress" required="required")
+                        input#city(type="text" name="city" class="form-control" title="City" required="required")
+                        input#country(type="text" name="country" class="form-control" title="Country" required="required")
                     .mb-3 
                         label(for="courseCode") Course Code 
-                        input#name(type="text", class="form-control", name="courseCode")
+                        input#courseCode(type="text", class="form-control", name="courseCode" required="required")
                     .mb-3
-                        label(for="phoneNo") Phone Number 
-                        input#price(type="text", class="form-control", name="phoneNo")
+                        label(for="phoneNo") PhoneNo
+                        input#phoneNo(type="text", class="form-control", name="phoneNo1" required="required")
+                    .mb-3
+                        label(for="Fax") Additional PhoneNo 
+                        input#phoneNo(type="text", class="form-control", name="phoneNo2" placeholder="optional")                        
+                    .mb-3
+                        label(for="mobile") Additional PhoneNo
+                        input#phoneNo(type="text", class="form-control", name="phoneNo3" placeholder="optional")                        
+                                                
                     input(type="submit", class="btn btn-primary")
             .col-sm-3

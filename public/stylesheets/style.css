@@ -16,3 +16,9 @@ a {
 a:hover {
   transform: scale(1.1);
 }
+
+#phone-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
