@@ -12,6 +12,11 @@ router.get("/add", async (req, res) => {
 });
 
 router.post("/add", async (req, res) => {
+  const phoneNumbers = [
+    req.body.phoneNo1,
+    req.body.phoneNo2,
+    req.body.phoneNo3,
+  ];
   let faculty = new Faculty();
 
   faculty.name = req.body.name;
@@ -21,9 +26,7 @@ router.post("/add", async (req, res) => {
   faculty.address.city = req.body.city;
   faculty.address.country = req.body.country;
   faculty.courseCode = req.body.courseCode;
-  faculty.phoneNo.push(req.body.phoneNo1);
-  faculty.phoneNo.push(req.body.phoneNo2);
-  faculty.phoneNo.push(req.body.phoneNo3);
+  faculty.phoneNo = phoneNumbers;
 
   await faculty.save();
   res.redirect("/api/faculty");
@@ -40,6 +43,12 @@ router.get("/edit/:id", async function (req, res) {
 });
 
 router.post("/edit/:id", async (req, res) => {
+  const phoneNumbers = [
+    req.body.phoneNo1,
+    req.body.phoneNo2,
+    req.body.phoneNo3,
+  ];
+
   let faculty = await Faculty.findById(req.params.id);
 
   faculty.name = req.body.name;
@@ -49,9 +58,7 @@ router.post("/edit/:id", async (req, res) => {
   faculty.address.city = req.body.city;
   faculty.address.country = req.body.country;
   faculty.courseCode = req.body.courseCode;
-  faculty.phoneNo[0] = req.body.phoneNo1;
-  faculty.phoneNo[1] = req.body.phoneNo2;
-  faculty.phoneNo[2] = req.body.phoneNo3;
+  faculty.phoneNo = phoneNumbers;
   console.log(faculty);
   await faculty.save();
   res.redirect("/api/faculty");
